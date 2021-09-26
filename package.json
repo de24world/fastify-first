@@ -2,9 +2,14 @@
   "name": "fastify-first",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap \"test/**/*.test.js\"",
+    "start": "fastify start -l info app.js",
+    "dev": "fastify start -w -l info -P app.js"
   },
   "repository": {
     "type": "git",
@@ -18,11 +23,14 @@
   },
   "homepage": "https://github.com/de24world/fastify-first#readme",
   "dependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
+    "@types/node": "^16.10.1",
     "fastify": "^3.21.6",
-    "nodemon": "^2.0.13",
-    "prettier": "^2.4.1",
-    "typescript": "^4.4.3"
+    "fastify-autoload": "^3.3.1",
+    "fastify-cli": "^2.13.0",
+    "fastify-plugin": "^3.0.0",
+    "fastify-sensible": "^3.1.0"
+  },
+  "devDependencies": {
+    "tap": "^15.0.9"
   }
 }
